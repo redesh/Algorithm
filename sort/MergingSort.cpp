@@ -1,8 +1,8 @@
-
+О╩©
 /*
-╧И╡╒еепР
-кЦ╥╗к╪оКё╨╧И╡╒еепР╥╗йг╫╚а╫╦Жё╗╩Ра╫╦Жртиоё╘сппР╠М╨о╡╒Ёир╩╦Жпб╣дсппР╠Мё╛
-╪╢╟я╢ЩеепРпРап╥жн╙хТ╦и╦ЖвспРапё╛ц©╦ЖвспРапйгсппР╣д║ёх╩╨Сты╟ясппРвспРап╨о╡╒н╙уШлЕсппРпРап║ё
+Е╫▓Е╧╤Ф▌▓Е╨▐
+Г╝≈ФЁ∙Ф─²Ф┐ЁО╪ Е╫▓Е╧╤Ф▌▓Е╨▐ФЁ∙Ф≤╞Е╟├Д╦╓Д╦╙О╪┬Ф┬√Д╦╓Д╦╙Д╩╔Д╦┼О╪┴Ф°┴Е╨▐Х║╗Е░┬Е╧╤Ф┬░Д╦─Д╦╙Ф√╟Г └Ф°┴Е╨▐Х║╗О╪▄
+Е█ЁФ┼┼Е╬┘Ф▌▓Е╨▐Е╨▐Е┬≈Е┬├Д╦╨Х▀╔Е╧╡Д╦╙Е╜░Е╨▐Е┬≈О╪▄Ф╞▐Д╦╙Е╜░Е╨▐Е┬≈Ф≤╞Ф°┴Е╨▐Г └Ц─┌Г└╤Е░▌Е├█Ф┼┼Ф°┴Е╨▐Е╜░Е╨▐Е┬≈Е░┬Е╧╤Д╦╨Ф∙╢Д╫⌠Ф°┴Е╨▐Е╨▐Е┬≈Ц─┌
 */
 template <typename T>
 void Merge(T *array,int low,int mid,int high)      
@@ -26,15 +26,15 @@ void Merge(T *array,int low,int mid,int high)
 	 for(p=0, i=low; i <= high; p++,i++) {
 		array[i] = temp[p];
 	 }
-	 free(temp);   //╪╟й╠йм╥е
+	 free(temp);   //Е▐┼Ф≈╤И┤┼Ф■╬
 }       
       
  void MergeSort(T array[], int low, int high)      
  {      
      if (low  < high)      
      {      
-         int mid = low + (high - low) / 2;   //╬Ы╥ж      
-         MergeSort(array, low, mid);        //╤тг╟╟К╡©╥ж    
+         int mid = low + (high - low) / 2;   //Е²┤Е┬├      
+         MergeSort(array, low, mid);        //Е╞╧Е┴█Е█┼И┐╗Е┬├    
          MergeSort(array, mid+1, high);      
          Merge(array, low, mid, high);      
      }      
