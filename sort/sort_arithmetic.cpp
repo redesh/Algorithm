@@ -3,7 +3,7 @@
 // Author      : 
 // Version     :
 // Copyright   : copyright reserved
-// Description : insert sort and bubble sort in C++, Ansi-style
+// Description : sort arithmetic in C++, Ansi-style
 //============================================================================
 #include <cstdlib>
 #include <iostream>
@@ -17,7 +17,7 @@ using namespace std;
 #endif
 #endif
 
-template<class T> void myswap(T &a, T &b) //ÏµÍ³Ìá¹©ÁËswap º¯Êı
+template<class T> void myswap(T &a, T &b) //ç³»ç»Ÿæä¾›äº†swap å‡½æ•°
 {
 	if (a == b)
 		return;
@@ -27,7 +27,7 @@ template<class T> void myswap(T &a, T &b) //ÏµÍ³Ìá¹©ÁËswap º¯Êı
 }
 
 template<class T> int getArrayLen(T& array) {
-	return (sizeof(array) / sizeof(array[0])); //ÈôÊÇ×Ö·ûÊı×éĞèÒª-1
+	return (sizeof(array) / sizeof(array[0])); //è‹¥æ˜¯å­—ç¬¦æ•°ç»„éœ€è¦-1
 }
 
 template<class T> int littleThan(T a, T b) {
@@ -39,12 +39,12 @@ template<class T> int cmp(const T a, const T b) {
 }
 
 int cmpForQsort(const void *a, const void *b) {
-	return *(int *) a > *(int *) b ? 1 : -1; //×¢Òâ
+	return *(int *) a > *(int *) b ? 1 : -1; //æ³¨æ„
 }
 /*
  int cmpForQsort2( const void *a , const void *b )
  {
- return *(double *)a > *(double *)b ? 1 : -1;//×¢Òâdouble float
+ return *(double *)a > *(double *)b ? 1 : -1;//æ³¨æ„double float
  }*/
 
 //insert sort
@@ -128,7 +128,7 @@ template<class T> int partition(T array[], int low, int high,
 	array[low] = pivotkey;
 	return low;
 }
-//(2) µİ¹é
+//(2) é€’å½’
 template<class T> void quickSort(T array[], int low, int high,
 		void (*sw)(T &, T &)) {
 	if (array == NULL || low < 0 || high < 0 || low > high || sw == NULL)
@@ -173,13 +173,13 @@ template<class T> void merge(T array[], T arrayAssist[], int low, int mid,
 		k++;
 	}
 
-	for (int index = low; index <= high; index++) //Êı¾İ´Ó¸¨Öú¿Õ¼äĞ´»ØÔ­Êı¾İ¿Õ¼ä
+	for (int index = low; index <= high; index++) //æ•°æ®ä»è¾…åŠ©ç©ºé—´å†™å›åŸæ•°æ®ç©ºé—´
 			{
 		array[index] = arrayAssist[index];
 	}
 
 }
-//(2) µİ¹é
+//(2) é€’å½’
 template<class T> void mergeSort(T array[], T arrayAssist[], int low,
 		int high) {
 	if (array == NULL || low < 0 || high < 0 || low > high)
