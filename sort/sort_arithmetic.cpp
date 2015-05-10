@@ -1,21 +1,22 @@
+#include <cstdlib>
+
+
 //============================================================================
 // Name        : Sort_c_plus_plus.cpp
 // Author      : 
 // Version     :
 // Copyright   : copyright reserved
-// Description : sort arithmetic in C++, Ansi-style
+// Description : insert sort and bubble sort in C++, Ansi-style
 //============================================================================
-#include <cstdlib>
 #include <iostream>
 using namespace std;
+
 /* Define NULL pointer value */
+
 #ifndef NULL
-#ifdef  __cplusplus
 #define NULL    0
-#else
-#define NULL    ((void *)0)
 #endif
-#endif
+
 
 template<class T> void myswap(T &a, T &b) //系统提供了swap 函数
 {
@@ -68,11 +69,13 @@ template<class T> void bubbleSort(T array[], int length, void (*sw)(T &, T &)) {
 	if (array == NULL || length <= 0 || sw == NULL)
 		return;
 	for (int i = 0; i < length; i++) {
+
 		for (int j = 0; j < length - i - 1; j++) {
 			if (array[j] > array[j + 1]) {
 				sw(array[j], array[j + 1]);
 			}
 		}
+
 	}
 }
 
@@ -82,10 +85,12 @@ template<class T> void selectSort(T array[], int length, void (*sw)(T &, T &)) {
 		return;
 	for (int i = 0; i < length; i++) {
 		int small = array[i];
+
 		for (int j = i; j < length; j++) {
 			if (array[j] < small) {
 				small = array[j];
 				sw(array[j], array[i]);
+
 			}
 		}
 
@@ -117,6 +122,7 @@ template<class T> int partition(T array[], int low, int high,
 	int mid = (low + high) / 2;
 	sw(array[low], array[mid]);
 	T pivotkey = array[low];
+
 	while (low < high) {
 		while (low < high && cmp(array[high], pivotkey) >= 0)
 			--high;
@@ -124,6 +130,7 @@ template<class T> int partition(T array[], int low, int high,
 		while (low < high && cmp(pivotkey, array[low]) >= 0)
 			++low;
 		array[high] = array[low];
+
 	}
 	array[low] = pivotkey;
 	return low;
@@ -192,7 +199,6 @@ template<class T> void mergeSort(T array[], T arrayAssist[], int low,
 	}
 }
 
-//test
 int main(int argc, char *argv[]) {
 	int arrayint[] = { 1, 2, 5, 7, 3 };
 	int arrayAssist[5];
@@ -202,7 +208,7 @@ int main(int argc, char *argv[]) {
 //	  ShellSort(arrayint,5,myswap);
 //	  quickSort(arrayint,0,5,myswap);
 //	  mergeSort(arrayint,arrayAssist,0,5);
-	qsort(arrayint, 5, sizeof(int), cmpForQsort); //call stl 's quickSort 
+	qsort(arrayint, 5, sizeof(int), cmpForQsort); //call stl 's quickSort
 
 	for (int i = 0; i < 5; i++) {
 		cout << arrayint[i] << " ";
@@ -211,6 +217,7 @@ int main(int argc, char *argv[]) {
 	system("PAUSE");
 	return EXIT_SUCCESS;
 }
+
 
 /*
 稳定的排序算法：
